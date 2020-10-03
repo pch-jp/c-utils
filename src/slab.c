@@ -5,6 +5,9 @@
  *
  */
 
+///@note this is a hack.  Utils is a submodule, so need a better way to convey that alloc/free shouldn't be used.
+#include "osdp_config.h"
+
 #include <string.h>
 
 #include <utils/slab.h>
@@ -20,8 +23,11 @@ int slab_init(slab_t *slab, size_t size, size_t count)
 
 void slab_del(slab_t *slab)
 {
+	///@note this is a hack.  Utils is a submodule, so need a better way to convey that alloc/free shouldn't be used.
+#	if !OSDP_BAREMETAL
 	safe_free(slab->blob);
 	safe_free(slab->alloc_map);
+#	endif
 	memset(slab, 0, sizeof(slab_t));
 }
 

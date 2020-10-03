@@ -9,7 +9,9 @@
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>
+
 #include <getopt.h>
+
 #include <utils/file.h>
 
 #include "test.h"
