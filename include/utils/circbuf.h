@@ -63,6 +63,7 @@ int __circ_gbuf_free_space(circ_gbuf_t *circ_gbuf);
 		return __circ_gbuf_pop(&buf, pt, 1);	\
 	}
 
+
 /**
  * Description:
  *   Resets the circular buffer offsets to zero. Does not clean the newly freed
@@ -84,6 +85,8 @@ int __circ_gbuf_free_space(circ_gbuf_t *circ_gbuf);
  *  -1 - Out of space
  */
 #define CIRC_GBUF_PUSH(buf, elem)             buf ## _push_refd(elem)
+
+///@note JPN: I think descriptions for POP and PEEK are interchanged.
 
 /**
  * Description:
@@ -107,6 +110,7 @@ int __circ_gbuf_free_space(circ_gbuf_t *circ_gbuf);
  *  -1 - Empty
  */
 #define CIRC_GBUF_POP(buf, elem)              buf ## _pop_refd(elem)
+
 
 /**
  * Description:
