@@ -31,6 +31,7 @@ typedef struct {
 int __circ_gbuf_push(circ_gbuf_t *circ_gbuf, void *elem);
 int __circ_gbuf_pop (circ_gbuf_t *circ_gbuf, void *elem, int read_only);
 int __circ_gbuf_free_space(circ_gbuf_t *circ_gbuf);
+int __circ_gbuf_count(circ_gbuf_t *circ_buf);
 /* -------------------------------------------------------------------------- */
 
 /**
