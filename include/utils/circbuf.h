@@ -121,4 +121,6 @@ int __circ_gbuf_free_space(circ_gbuf_t *circ_gbuf);
  */
 #define CIRC_GBUF_FS(buf)                     __circ_gbuf_free_space(&buf)
 
+#define CIRC_GBUF_CNT(buf)                    __circ_gbuf_count(&buf)
+
 #endif /* _UTIL_CIRCBUF_H_ */

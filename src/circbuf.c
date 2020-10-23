@@ -68,3 +68,14 @@ int __circ_gbuf_free_space(circ_gbuf_t *circ_buf)
 
 	return circ_buf->size - total;
 }
+
+int __circ_gbuf_count(circ_gbuf_t *circ_buf) {
+    int total;
+
+    total = circ_buf->push_count - circ_buf->pop_count;
+    if (total < 0)
+        total += (2 * circ_buf->size);
+
+    return total;
+}
+
